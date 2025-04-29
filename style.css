@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+}
+
+.board {
+    margin: 10vh auto;
+    border: 4px solid gray;
+    padding: 4px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: 400px;
+    height: 400px;
+
+
+}
+
+.square {
+    border: 1px solid blue;
+    
+
+
+
+}
