@@ -1,24 +1,46 @@
-const playerOne = {
-        name: "Player 1",
-        marker: "x"
-    }
+// const gameboard = {
+//     board: [],
 
-    const playerTwo = {
-        name: "Player 2",
-        marker: "o"
-    }
-    
-function playGame() {
-    player = this.player;
-    marker = this.marker;
+// }
 
-    
+// // const playerOne = {
+// //     name: "Player One",
+// //     marker: "X"
+// // };
 
+// // const playerTwo = {
+// //     name: "Player Two",
+// //     marker: "O"
+// // };
 
-function gameOver(winningPlayer){
-    console.log(winningPlayer.name + " wins!")
-}
+// function Player(name, marker) {
+//     this.name = name;
+//     this.marker = marker;
+// }
 
-}
+// let playerOne = new Player{};
+// let playerTwo = new Player{};
+
+// function playGame() {
+//     const gameboard = {
+//         squares: [],
+//         playerOne: {
+//             name: "Player One",
+//             marker: "X"
+//         },
+//         playerTwo: {
+//             name: "Player Two",
+//             marker: "O"
+//         }
+//     };
+
+//     function handleClick(e) {
+
+//     }
+
+//     function checkForWin() {
+
+//     }
+// }
 
 
