@@ -1,46 +1,19 @@
-// const gameboard = {
-//     board: [],
 
-// }
+// MAKE A GAMEBOARD THAT GOES IN AN ARRAY -AN ARRAY OF SQUARES(SPACES) 3x3
 
-// // const playerOne = {
-// //     name: "Player One",
-// //     marker: "X"
-// // };
+let gameboard = (function() {
+    board = [];
 
-// // const playerTwo = {
-// //     name: "Player Two",
-// //     marker: "O"
-// // };
+    for (i = 0; i < 3; i++) {
+        board[i] = [];
+        for (j = 0; j < 3; j++) {
+            board[i][j] = 0;
+        }
+    }
+    return board;
+}
 
-// function Player(name, marker) {
-//     this.name = name;
-//     this.marker = marker;
-// }
+)();
 
-// let playerOne = new Player{};
-// let playerTwo = new Player{};
-
-// function playGame() {
-//     const gameboard = {
-//         squares: [],
-//         playerOne: {
-//             name: "Player One",
-//             marker: "X"
-//         },
-//         playerTwo: {
-//             name: "Player Two",
-//             marker: "O"
-//         }
-//     };
-
-//     function handleClick(e) {
-
-//     }
-
-//     function checkForWin() {
-
-//     }
-// }
-
+console.log(gameboard);
 
