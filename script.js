@@ -2,24 +2,29 @@
 // //////////////////// THE GAMEBOARD ITSELF //////////////////////////
 let gameboard = (function() {
     let board = [];
+    const container = document.querySelector(".board"); // need container to append divs to
 
     for (let i = 0; i < 3; i++) {
         board[i] = [];
         for (let j = 0; j < 3; j++) {
-            board[i][j] = 0;
+            let square = document.createElement("div"); // need to set created element to a variable
+            square.classList.add("square"); // give the created div a class name
+            container.appendChild(square); // need to append each div so it shows in window
+            board[i][j] = square; // now each space in a 2d array is attached to a "square" (div)
+        
         }
     }
     
-    // create method to get board
+    // Method to show the board
     function getBoard() {
     return board;
     }
 
-    // create method to update the board
+    // Method to update the board
     function updateBoard(i, j) {
     game.checkPlayerTurn();    
     let marker = currentPlayer.marker;
-    if (board[i][j] === 0) {
+    if (board[i][j] === '') {
         board[i][j] = marker;
         if(checkForWin()) {
             console.log(`CONGRATS ${currentPlayer.name}! YOU WIN!`);
@@ -28,10 +33,10 @@ let gameboard = (function() {
         game.nextTurn();
     } else {console.log(`THAT SLOT IS ALREADY TAKEN! TRY AGAIN`)}
     
-    return console.log(board);
+    return board;
     } 
 
-    // create method to check for win
+    // Method to check for win
     function checkForWin() {
         // check through rows
         for (let row = 0; row < 3; row++) {
@@ -52,7 +57,7 @@ let gameboard = (function() {
         } 
         return false;
     }
-
+    // Method to reset each space in the board to 0
     function resetBoard() {
     board[0][0] = 0;
     board[0][1] = 0;
@@ -70,14 +75,15 @@ let gameboard = (function() {
     return {
         getBoard,
         updateBoard,
-        resetBoard,
-        checkForWin
+        checkForWin,
+        resetBoard
+        
     };
 
 })();
 
 
-
+// ////////////////////// FUNCTION TO CREATE PLAYER OBJECT //////////////////
 function player(name, marker) {
     return { name, marker }
 };
@@ -85,16 +91,16 @@ const player1 = player('PLAYER', 'X');
 const player2 = player('PLAYER 2', 'O');
 
 
-
+// //////////////////////// LOGIC FOR THE GAME //////////////////////////////
 let game = (function() {
     let turn = 0;
     function start() {
         turn = 1;
         
-        return console.log(gameboard.getBoard())
+        return gameboard.getBoard();
 
     }
-
+    // Method to check which player's turn it is
     function checkPlayerTurn() {
         if (turn % 2 === 0) {
             currentPlayer = player2;
@@ -103,12 +109,7 @@ let game = (function() {
         }
     }
 
-    // function squareSelect(i, j) {
-    //     gameboard.updateBoard(i, j);
-    //     console.log(turn);
-    //     return console.log(gameboard.getBoard());
-    // }
-
+    // Method to count number of turns taken - tic tac toe only needs max 9 turns
     function nextTurn() {
         if (turn === 9) {
             console.log(`IT'S A TIE!`);
@@ -122,11 +123,11 @@ let game = (function() {
     return {
         start,
         checkPlayerTurn,
-        // squareSelect,
         nextTurn,
     }
 }());
 
+// /////////////////////////////// STARTS THE GAME RIGHT AWAY //////////////////////
 game.start();
 
 // // win condition example
