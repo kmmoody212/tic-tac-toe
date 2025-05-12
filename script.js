@@ -32,10 +32,13 @@ let gameboard = (function() {
         board[i][j].textContent = marker;
         if(checkForWin()) {
             console.log(`CONGRATS ${currentPlayer.name}! YOU WIN!`);
-            resetBoard();
-        };
-        game.nextTurn();
-    } else {console.log(`THAT SLOT IS ALREADY TAKEN! TRY AGAIN`)}
+            alert(`RESTART GAME?`);
+            resetBoard();}
+            
+         else {
+            game.nextTurn();
+        }} else {
+            console.log(`THAT SLOT IS ALREADY TAKEN! TRY AGAIN`)}
     
     return board;
     } 
@@ -61,11 +64,17 @@ let gameboard = (function() {
         } 
         return false;
     }
-    // Method to reset each space in the board to 0
+
+    // Method to reset each space in the board
     function resetBoard() {
-    game.start()
-    
+    const squares = document.querySelectorAll(".square");
+    squares.forEach(square => {
+        square.textContent = '';
+    })
+    return game.start();
     }
+    
+    
 
     return {
         getBoard,
@@ -108,7 +117,8 @@ let game = (function() {
     function nextTurn() {
         if (turn === 9) {
             console.log(`IT'S A TIE!`);
-            return gameboard.resetBoard();
+            alert(`RESTART GAME?`);
+            gameboard.resetBoard();
         } else {
             turn += 1;
             return console.log(turn)
