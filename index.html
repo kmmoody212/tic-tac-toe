@@ -11,7 +11,11 @@
     <div class="player-turn"></div>
     <div class="board"></div>
     <button onClick="gameboard.resetBoard()">RESTART</button>
-    <div class="modal"></div>
+    <div class="modal-container hidden"> <!--This will create the darkened bg-->
+        <div class="modal-content "> <!--This holds the popup content-->
+            <button id="restart">PLAY AGAIN</button>
+        </div>
+    </div>
     <script src="script.js" defer></script>
 </body>
 </html>

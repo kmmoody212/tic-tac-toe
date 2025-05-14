@@ -29,17 +29,12 @@ let gameboard = (function() {
     if (board[i][j].textContent === '') { // if the content in the target square is blank - 
         board[i][j].textContent = marker; // set the content to player's marker
         if(checkForWin()) { // and if checkForWin() comes back true, do the following:
-            game.winnerMessage();
-            // alert(`RESTART GAME?`);
-            resetBoard();
-        }
-            
-         else {
+            showModal();
+        } else {
             game.nextTurn();
             game.playerTurnMessage();
         }} else {
             console.log(`THAT SLOT IS ALREADY TAKEN! TRY AGAIN`)}
-    
     return board;
     } 
 
@@ -65,8 +60,6 @@ let gameboard = (function() {
         return false;
     }
 
-
-
     // Method to reset each space in the board
     function resetBoard() {
     const squares = document.querySelectorAll(".square");
@@ -75,6 +68,21 @@ let gameboard = (function() {
     })
     return game.start();
     }
+
+// TODO: Method to show and hide the modal/popup
+    const modal = document.querySelector(".modal-container");
+    const button = document.getElementById("restart")
+    function showModal() {
+       modal.classList.remove("hidden");
+       game.winnerMessage();
+       console.log("the modal should be showing with the winning message")
+    }
+    
+    button.addEventListener("click", () => {
+            modal.classList.add("hidden");
+            resetBoard();
+            console.log("Close Modal worked and game has been reset!")
+        })
     
     
 
@@ -82,7 +90,9 @@ let gameboard = (function() {
         getBoard,
         updateBoard,
         checkForWin,
-        resetBoard
+        resetBoard,
+        showModal,
+        
         
     };
 
@@ -120,8 +130,10 @@ let game = (function() {
     }
 
     function winnerMessage() {
-        let msg = document.querySelector(".modal")
-        return msg.textContent = `CONGRATS ${currentPlayer.name}! YOU WIN!!!`
+        let msg = document.querySelector(".modal-content")
+        let winMsg = document.createElement("h2");
+        winMsg.textContent = `CONGRATS ${currentPlayer.name}! YOU WIN!!!`
+        return msg.insertBefore(winMsg, msg.firstChild)
     }
 
 
@@ -146,6 +158,7 @@ let game = (function() {
         }
         
     }
+
 
     return {
         start,
