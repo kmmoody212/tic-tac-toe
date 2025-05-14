@@ -69,7 +69,7 @@ let gameboard = (function() {
     return game.start();
     }
 
-// TODO: Method to show and hide the modal/popup
+//  Method to show and hide the modal/popup
     const modal = document.querySelector(".modal-container");
     const button = document.getElementById("restart")
     const winMsg = document.querySelector(".modal-content")
@@ -134,8 +134,12 @@ let game = (function() {
     function winnerMessage() {
         let msg = document.querySelector(".modal-content")
         let winMsg = document.createElement("h2");
-        winMsg.textContent = `CONGRATS ${currentPlayer.name}! YOU WIN!!!`;
 
+        if (turn === 9) {
+            winMsg.textContent = `IT'S A TIE!!`
+        } else {
+        winMsg.textContent = `CONGRATS ${currentPlayer.name}! YOU WIN!!!`;
+        }
         return msg.insertBefore(winMsg, msg.firstChild)
     }
     
@@ -153,9 +157,7 @@ let game = (function() {
     // Method to count number of turns taken - tic tac toe only needs max 9 turns
     function nextTurn() {
         if (turn === 9) {
-            console.log(`IT'S A TIE!`);
-            alert(`RESTART GAME?`);
-            gameboard.resetBoard();
+            gameboard.showModal();
         } else {
             turn += 1;
             return console.log(turn)
