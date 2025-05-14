@@ -72,14 +72,16 @@ let gameboard = (function() {
 // TODO: Method to show and hide the modal/popup
     const modal = document.querySelector(".modal-container");
     const button = document.getElementById("restart")
+    const winMsg = document.querySelector(".modal-content")
     function showModal() {
        modal.classList.remove("hidden");
        game.winnerMessage();
        console.log("the modal should be showing with the winning message")
     }
-    
+
     button.addEventListener("click", () => {
             modal.classList.add("hidden");
+            winMsg.removeChild(winMsg.firstChild);
             resetBoard();
             console.log("Close Modal worked and game has been reset!")
         })
@@ -132,9 +134,11 @@ let game = (function() {
     function winnerMessage() {
         let msg = document.querySelector(".modal-content")
         let winMsg = document.createElement("h2");
-        winMsg.textContent = `CONGRATS ${currentPlayer.name}! YOU WIN!!!`
+        winMsg.textContent = `CONGRATS ${currentPlayer.name}! YOU WIN!!!`;
+
         return msg.insertBefore(winMsg, msg.firstChild)
     }
+    
 
 
     // Method to check which player's turn it is
