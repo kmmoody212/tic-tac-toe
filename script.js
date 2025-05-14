@@ -124,9 +124,9 @@ let game = (function() {
         let whosTurn = document.querySelector(".player-turn");
         checkPlayerTurn();
         if(turn % 2 === 0 ) {
-            whosTurn.textContent = `IT IS PLAYER 2'S TURN`
+            whosTurn.textContent = `It's PLAYER 2's turn!`
         } else {
-            whosTurn.textContent = `IT IS PLAYER 1'S TURN`
+            whosTurn.textContent = `It's PLAYER 1's turn!`
         }
         
     }

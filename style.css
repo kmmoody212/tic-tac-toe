@@ -1,23 +1,51 @@
 * {
     margin: 0;
+    font-family: "Sour Gummy", sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-size: 4rem;
+}
+
+.player-turn {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }
 
 .board {
-    margin: 10vh auto;
+    margin: auto;
     border: 4px solid gray;
-    padding: 4px;
+    padding: 8px;
     border-radius: 10px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    width: 400px;
-    height: 400px;
+    width: 375px;
+    height: 375px;
 
 }
 
 .square {
     border: 1px solid blue;
+    padding: 8px;
 
+}
+
+.board-btn {
+    display: block;
+    margin: 1.5rem;
+    margin-right: 30vw;
+    float: right;
+    font-size: 1.1rem;
+    padding: 2px 20px;
+    border-radius: 18px;
+    border: none;
+    background-color: rgb(185, 211, 241);
+    color: rgb(57, 43, 147);
+    font-weight: bold;
+    
 }
 
 .modal-container {

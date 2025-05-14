@@ -3,14 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+</style>
     <link rel="stylesheet" href="style.css" />
     <title>Tic-Tac-Toe</title>
 </head>
 <body>
     <h1>TIC-TAC-TOE</h1>
     <div class="player-turn"></div>
+    <div class="board-container">
     <div class="board"></div>
-    <button onClick="gameboard.resetBoard()">RESTART</button>
+    <button class="board-btn" onClick="gameboard.resetBoard()">RESTART</button>
+    </div>
+    
     <div class="modal-container hidden"> <!--This will create the darkened bg-->
         <div class="modal-content "> <!--This holds the popup content-->
             <button id="restart">PLAY AGAIN</button>
