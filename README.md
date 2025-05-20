@@ -1,4 +1,4 @@
-# <center>Tic-Tac-Toe 🐸</center>
+# Tic-Tac-Toe 🐸
 
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -44,4 +44,4 @@ Feel free to [send me an email](mailto:kmfoster212@gmail.com) with any questions
 
 Project Link: https://github.com/kmmoody212/tic-tac-toe
 
-**<center>THANKS FOR VISITING! 😁</center>**
+**THANKS FOR VISITING! 😁**
