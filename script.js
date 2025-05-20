@@ -8,12 +8,14 @@ let gameboard = (function() {
         for (let j = 0; j < 3; j++) {
             let square = document.createElement("div"); // need to set created element to a variable
             square.classList.add("square"); // give the created div a class name
+            square.style.fontSize = "2.5rem";
             square.addEventListener("click", function() {
                 game.playerTurnMessage();
                 updateBoard(i, j);
             })
             container.appendChild(square); // need to append each div so it shows in window
             board[i][j] = square; // now each space in a 2d array is attached to a "square" (div)
+            
         }
     }
     
@@ -105,8 +107,10 @@ let gameboard = (function() {
 function player(name, marker) {
     return { name, marker }
 };
-const player1 = player('PLAYER 1', 'X');
-const player2 = player('PLAYER 2', 'O');
+
+
+const player1 = player('PLAYER 1', "🐸");
+const player2 = player('PLAYER 2', "🪰");
 
 
 // //////////////////////// LOGIC FOR THE GAME //////////////////////////////
