@@ -5,7 +5,7 @@
 
 ## About
 
-Want to play a quick game of Tic Tac Toe in your browser? Bored with the standard "X" and "O" markers? Well then do I have some good news for you! This application is a cute "Frogs vs. Flies" version of Tic Tac Toe that you can easily play with a friend!
+Want to play a quick game of Tic Tac Toe in your browser? Bored with the standard "X" and "O" markers? Well then, do I have some good news for you! This application is a cute "Frogs vs. Flies" version of Tic Tac Toe that you can easily play with a friend right in your browser!
 
 This project was created as a solution to an assignment in the Full Stack JavaScript Course by [The Odin Project](https://theodinproject.com). The assignment criteria called for a tic-tac-toe game that uses as little global code as possible, and to create the game using factory functions wrapped inside an IIFE.
 
